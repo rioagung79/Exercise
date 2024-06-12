@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Luas dan Volume</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Kalkulator Luas dan Volume</h1>
+        <div class="form">
+            <label for="shape">Pilih Bentuk:</label>
+            <select id="shape">
+                <option value="tabung">Tabung</option>
+                <option value="bola">Bola</option>
+                <option value="limas">Limas Segi Empat</option>
+            </select>
+            <div id="inputs">
+                <!-- Input fields will be added dynamically based on the selected shape -->
+            </div>
+            <button onclick="calculate()">Hitung</button>
+        </div>
+        <div id="result"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
