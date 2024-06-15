@@ -42,10 +42,71 @@
                 <input type="submit" value="Kirim">
             </form>
         </section>
+        
+        <!-- Section to display data from local storage -->
+        <section class="load-data">
+            <h2>Data Kehadiran</h2>
+            <ul id="dataList"></ul>
+        </section>
     </main>
+
+    <button class="floating-back-button" onclick="goBack()">&#x2190;</button>
     <footer>
         <p>&copy; 2024 Undangan Pernikahan. All rights reserved.</p>
     </footer>
-    <script src="script.js"></script>
+    <script>
+        // Function to save form data to local storage
+        document.getElementById('attendance-form').addEventListener('submit', function(e) {
+            e.preventDefault(); // Prevent default form submission
+
+            // Get data from the form
+            const name = document.getElementById('name').value;
+            const address = document.getElementById('address').value;
+            const attendance = document.querySelector('input[name="attendance"]:checked').value;
+            const message = document.getElementById('message').value;
+
+            // Create an object to store the data
+            const formData = {
+                name,
+                address,
+                attendance,
+                message
+            };
+
+            // Retrieve existing data from local storage
+            let data = JSON.parse(localStorage.getItem('attendanceData')) || [];
+            data.push(formData);
+
+            // Save updated data to local storage
+            localStorage.setItem('attendanceData', JSON.stringify(data));
+
+            // Display the updated data
+            displayData();
+            e.target.reset();
+
+        });
+
+        // Function to display data from local storage
+        function displayData() {
+            const dataList = document.getElementById('dataList');
+            dataList.innerHTML = '';
+
+            // Retrieve data from local storage
+            const data = JSON.parse(localStorage.getItem('attendanceData')) || [];
+
+            // Display each item as a list item
+            data.forEach(function(item) {
+                const listItem = document.createElement('li');
+                listItem.innerHTML = `Nama: ${item.name}<br>Alamat: ${item.address}<br>Hadir: ${item.attendance}<br>Pesan: ${item.message}<br><Br>`;
+                dataList.appendChild(listItem);
+            });
+        }
+
+        // Display data when the page loads
+        document.addEventListener('DOMContentLoaded', displayData);
+        function goBack() {
+            window.location.href = '../index.html';
+        }
+    </script>
 </body>
 </html>

@@ -3,28 +3,103 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Form Pendaftaran Lomba Marathon</title>
+    <title>Undangan Pernikahan</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Pendaftaran Lomba Marathon</h1>
-        <form id="registrationForm" class="registrationForm">
-            <div class="form-group">
-                <label for="fullName">Nama Lengkap:</label>
-                <input type="text" id="fullName" name="fullName" required>
+    <header class="backgroundnya">
+        <header class="hero">
+            <div class="hero-content">
+                <h1>Marathon Event</h1>
+                <!-- <h2>Berlari meraih mimpi</h2> -->
             </div>
-            <div class="form-group">
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-            <div class="form-group">
-                <label for="phone">Nomor Telepon:</label>
-                <input type="tel" id="phone" name="phone" pattern="[0-9]{10,}" required>
-            </div>
-            <button type="submit">Daftar</button>
-        </form>
-    </div>
-    <script src="script.js"></script>
+        </header>
+    </header>
+
+  
+
+
+<section id="marathon-info">
+    <h2>Marathon Event Requirements</h2>
+    <ul>
+        <li>1. Hanya berlaku bagi pelari berkewarganegaraan Indonesia dengan KTP</li>
+        <li>2. Tidak berasal dari invitasi / undangan Persatuan Atletik Seluruh Indonesia (PASI)</li>
+        <li>3. Terdaftar dan menyelesaikan perlombaan dengan waktu finis sama atau kurang dari catatan waktu lomba sebagai berikut:</li>
+        <ul>
+            <li>a. Kategori Umur <= 34, Laki-laki 3:10:00, Perempuan 3:40:00</li>
+            <li>b. Kategori Umur 35 s.d 39, Laki-laki 3:15:00, Perempuan 3:45:00</li>
+            <li>c. Kategori Umur 40 s.d 44, Laki-laki 3:20:00, Perempuan 3:50:00</li>
+            <li>d. Kategori Umur 45 s.d 49, Laki-laki 3:25:00, Perempuan 3:55:00</li>
+            <li>e. Kategori Umur 50 s.d 59, Laki-laki 3:40:00, Perempuan 4:10:00</li>
+            <li>f. Kategori Umur 60 s.d 69, Laki-laki 4:05:00, Perempuan 4:35:00</li>
+            <li>g. Kategori Umur >=70, Laki-laki 4:40:00, Perempuan 5:10:00</li>
+        </ul>
+    </ul>
+
+    <div class="buttonnya">
+        <a href="regis/index.html" class="styled-button">Register</a>
+        </div>
+</section>
+
+
+
+    <button class="floating-back-button" onclick="goBack()">&#x2190;</button>
+    <footer>
+        <p>&copy; 2024 Undangan Pernikahan. All rights reserved.</p>
+    </footer>
+    <script>
+        // Function to save form data to local storage
+        document.getElementById('attendance-form').addEventListener('submit', function(e) {
+            e.preventDefault(); // Prevent default form submission
+
+            // Get data from the form
+            const name = document.getElementById('name').value;
+            const address = document.getElementById('address').value;
+            const attendance = document.querySelector('input[name="attendance"]:checked').value;
+            const message = document.getElementById('message').value;
+
+            // Create an object to store the data
+            const formData = {
+                name,
+                address,
+                attendance,
+                message
+            };
+
+            // Retrieve existing data from local storage
+            let data = JSON.parse(localStorage.getItem('attendanceData')) || [];
+            data.push(formData);
+
+            // Save updated data to local storage
+            localStorage.setItem('attendanceData', JSON.stringify(data));
+
+            // Display the updated data
+            displayData();
+            e.target.reset();
+
+        });
+
+        // Function to display data from local storage
+        function displayData() {
+            const dataList = document.getElementById('dataList');
+            dataList.innerHTML = '';
+
+            // Retrieve data from local storage
+            const data = JSON.parse(localStorage.getItem('attendanceData')) || [];
+
+            // Display each item as a list item
+            data.forEach(function(item) {
+                const listItem = document.createElement('li');
+                listItem.innerHTML = `Nama: ${item.name}<br>Alamat: ${item.address}<br>Hadir: ${item.attendance}<br>Pesan: ${item.message}<br><Br>`;
+                dataList.appendChild(listItem);
+            });
+        }
+
+        // Display data when the page loads
+        document.addEventListener('DOMContentLoaded', displayData);
+        function goBack() {
+            window.location.href = '../index.html';
+        }
+    </script>
 </body>
 </html>

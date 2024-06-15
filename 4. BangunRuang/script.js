@@ -1,3 +1,6 @@
+function reset() {
+    location.reload();
+}
 function calculate() {
     const shape = document.getElementById("shape").value;
     let result;

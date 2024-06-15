@@ -2,34 +2,82 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
+  background-color: #f4f4f4;
+  color: #333;
+  line-height: 1.6;
 }
 
 header {
-  background-color: #333;
-  color: #fff;
-  text-align: center;
+  background: #333;
+  color: white;
   padding: 20px 0;
+  text-align: center;
 }
 
 header h1 {
   margin: 0;
+  font-size: 2.5rem;
 }
 
 header p {
-  font-style: italic;
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+}
+
+header a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+header a:hover {
+  text-decoration: underline;
 }
 
 section {
+  max-width: '100%';
+  margin: 20px auto;
+  background: white;
   padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 section h2 {
-  margin-top: 0;
+  color: #333;
+  font-size: 2rem;
+  margin-bottom: 15px;
 }
 
-section ul {
-  list-style-type: none;
-  padding: 0;
+section ul, section ol {
+  list-style-type: square;
+  padding-left: 20px;
+}
+
+section li {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+
+#web-portfolio {
+  margin-bottom: 50px; /* Spacing at the bottom for the floating back button */
+}
+
+.floating-back-button {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  font-size: 2rem;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  padding: 10px 15px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.floating-back-button:hover {
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 footer {
@@ -37,4 +85,18 @@ footer {
   color: #fff;
   text-align: center;
   padding: 10px 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
+.animated-section {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.animate-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+

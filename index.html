@@ -37,7 +37,7 @@
             font-size: 1.1em;
         }
         #web-portfolio ul {
-            list-style-type: square;
+            list-style-type: none;
             padding: 0;
         }
         #web-portfolio li {
@@ -64,22 +64,37 @@
     <p>Here are some of my sample websites:</p>
     <ul>
         <li>
-            <a href="1. Wedding/index.html" target="_blank">Wedding Invitation Website</a> - A Wedding Invitation Website with Google Map and Attendance Confirmation Form.
+            <a href="1. Wedding/index.html">Wedding Invitation Website</a> - A Wedding Invitation Website with Google Map and Attendance Confirmation Form.
         </li>
         <li>
-            <a href="2. MarathonEvent/index.html" target="_blank">Marathon Event Registration Website</a> - A website to receive registration forms for marathon events.
+            <a href="2. MarathonEvent/index.html">Marathon Event Registration Website</a> - A website to receive registration forms for marathon events.
         </li>
         <li>
-            <a href="3. CompanyProfile/index.html" target="_blank">Company Profile Website</a> - A company profile website containing pages: Home, Products, About Us, & Contact Us.
+            <a href="3. CompanyProfile/index.html">Company Profile Website</a> - A company profile website containing pages: Home, Products, About Us, & Contact Us.
         </li>
         <li>
-            <a href="4. BangunRuang/index.html" target="_blank">Geometry Website</a> - A website to display and calculate geometry based on user input.
+            <a href="4. BangunRuang/index.html">Geometry Website</a> - A website to display and calculate geometry based on user input.
         </li>
         <li>
-            <a href="5. ResumeProfile/index.html" target="_blank">Resume Profile Website</a> - An online resume profile showcasing professional experience and skills.
+            <a href="5. ResumeProfile/index.html">Resume Profile Website</a> - An online resume profile showcasing professional experience and skills.
         </li>
     </ul>
 </section>
+
+<script>
+    const projects = document.querySelectorAll('#web-portfolio ul li');
+
+    projects.forEach(project => {
+        project.addEventListener('mouseover', () => {
+            const description = project.textContent.trim().split(' - ')[1];
+            project.setAttribute('title', description);
+        });
+
+        project.addEventListener('mouseout', () => {
+            project.removeAttribute('title');
+        });
+    });
+</script>
 
 </body>
 </html>

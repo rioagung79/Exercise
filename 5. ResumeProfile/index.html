@@ -14,9 +14,9 @@
   <p><a href="https://www.linkedin.com/in/rio-agung-prianggodo-40263639" target="_blank">LinkedIn Profile</a></p>
 </header>
 
-<section id="competency">
+<section id="competency"  class="animated-section">
   <h2>Competency</h2>
-  <ul style="list-style-type:square;">
+  <ul>
     <li>Strong knowledge in Core Refresh and Banking Operational Merger Project</li>
     <li>Strong knowledge in Regulatory Reporting & Payment System</li>
     <li>Familiar with Core Banking & Pension Payment System</li>
@@ -25,16 +25,52 @@
   </ul>
 </section>
 
-<section id="education">
+<section id="education"  class="animated-section">
   <h2>Education</h2>
-  <ul style="list-style-type:square;">
+  <ul>
     <li>Bachelor of Informatics Engineering - Esa Unggul University</li>
     <li>Diploma of Informatics Engineering - Padjadjaran University</li>
     <li>High School - SMU 1 High School</li>
   </ul>
 </section>
 
-<section id="work-experience">
+
+<section id="skills"  class="animated-section">
+  <h2>Skills</h2>
+  <ul>
+    <li>Programming       : Visual Basic, RPGLE/AS400 Programming</li>
+    <li>Soft Skill        : System & Design Analyst, Project Manager</li>
+    <li>Operating System  : Linux Red Hat, UNIX</li>
+    <li>Data Base         : SQL Server, Microsoft Access</li>
+    </ul>
+</section>
+
+<section id="awards"  class="animated-section">
+  <h2>Awards & Certification</h2>
+  <ul>
+    <li>Contribute Jago Sharia App - PT Bank Jago, Tbk (2022)</li>
+    <li>Shinhan Way Award - Shinhan Financial Group Korea (2019)</li>
+    <li>Project Manager Implementation of SKN & RTGS Gen 2 - PT Bank Danamon Indonesia, Tbk (2015)</li>
+    <li>Certificate of Risk Management - Indonesian Professional Certification Authority Level 3 (2018)</li>
+    <li>System Analysis & Design - Brain Bench International Certification (2008)</li>
+    <li>Mastering IT Project Management - Andalan Nusantara Technology (2010)</li>
+  </ul>
+</section>
+
+<section id="web-portfolio"  class="animated-section">
+  <h2>Web Portfolio</h2>
+  <p>Here are some of my sample websites:</p>
+  <ul>
+    <li><a href="../1. Wedding/index.html" target="_blank">Wedding Invitation Website</a> - A Wedding Invitation Website with content of Google Map and Attendance Confirmation Form</li>
+    <li><a href="../2. MarathonEvent/index.html" target="_blank">Marathon Event Registration Website</a> - Website to receive forms for registration for marathon events</li>
+    <li><a href="../3. CompanyProfile/index.html" target="_blank">Company Profile Website</a> - Company profile website containing pages: Home, Products, About Us, & Contact us</li>
+    <li><a href="../4. BangunRuang/index.html" target="_blank">Geometry Website</a> - Website to displays and calculate geometry as user input</li>
+    <li><a href="../5. ResumeProfile/index.html" target="_blank">Resume Profile Website</a> - An online resume profile showcasing professional experience and skills</li>
+  </ul>
+</section>
+
+
+<section id="work-experience"  class="animated-section">
   <h2>Work Experience</h2>
   <h3>Permanent Employee</h3>
   <ol>
@@ -56,43 +92,57 @@
   </ol>
 </section>
 
-<section id="skills">
-  <h2>Skills</h2>
-  <ul style="list-style-type:square;">
-    <li>Programming       : Visual Basic, RPGLE/AS400 Programming</li>
-    <li>Soft Skill        : System & Design Analyst, Project Manager</li>
-    <li>Operating System  : Linux Red Hat, UNIX</li>
-    <li>Data Base         : SQL Server, Microsoft Access</li>
-    </ul>
-</section>
-
-<section id="awards">
-  <h2>Awards & Certification</h2>
-  <ul style="list-style-type:square;">
-    <li>Contribute Jago Sharia App - PT Bank Jago, Tbk (2022)</li>
-    <li>Shinhan Way Award - Shinhan Financial Group Korea (2019)</li>
-    <li>Project Manager Implementation of SKN & RTGS Gen 2 - PT Bank Danamon Indonesia, Tbk (2015)</li>
-    <li>Certificate of Risk Management - Indonesian Professional Certification Authority Level 3 (2018)</li>
-    <li>System Analysis & Design - Brain Bench International Certification (2008)</li>
-    <li>Mastering IT Project Management - Andalan Nusantara Technology (2010)</li>
-  </ul>
-</section>
-
-<section id="web-portfolio">
-  <h2>Web Portfolio</h2>
-  <p>Here are some of my sample websites:</p>
-  <ul style="list-style-type:square;">
-    <li><a href="../1. Wedding/index.html" target="_blank">Wedding Invitation Website </a> - A Wedding Invitation Website with content of Google Map and Attendance Confirmation Form</li>
-    <li><a href="../2. MarathonEvent/index.html" target="_blank">Wedding Invitation Website </a> - A Wedding Invitation Website with content of Google Map and Attendance Confirmation Form</li>
-    <li><a href="../3. CompanyProfile/index.html" target="_blank">Registration Marathon Event Website</a> - Website to receive forms for registration for marathon events</li>
-    <li><a href="../4. BangunRuang/index.html" target="_blank">Company Profile Website</a> - Company profile website containing pages: Home, Products, About Us, & Contact us</li>
-    <li><a href="../5. ResumeProfile/index.html" target="_blank">Geometry Website</a> - Website to displays and calculate geometry as user input</li>
-  </ul>
-</section>
 
 <footer>
   <p>&copy; 2024 Rio Agung Prianggodo. All rights reserved.</p>
 </footer>
+<button class="floating-back-button" onclick="goBack()">&#x2190;</button>
+
+
+<script>
+  // Function to go back
+function goBack() {
+  window.location.href = '../index.html';
+}
+
+const animatedSections = document.querySelectorAll('.animated-section');
+
+function animateOnScroll() {
+  animatedSections.forEach(section => {
+    const sectionTop = section.getBoundingClientRect().top;
+    const windowHeight = window.innerHeight;
+    if (sectionTop < windowHeight * 1) {
+      if (section.style.opacity !== '1') {
+        section.style.opacity = 1;
+        section.style.transform = 'translateY(0)';
+      }
+    } else {
+      if (section.style.opacity !== '0') {
+        section.style.opacity = 0;
+        section.style.transform = 'translateY(50px)';
+      }
+    }
+  });
+}
+
+let scrollTimeout;
+
+function debounceScroll() {
+  if (scrollTimeout) {
+    clearTimeout(scrollTimeout);
+  }
+  scrollTimeout = setTimeout(() => {
+    animateOnScroll();
+  }, 100); // Adjust debounce time as needed
+}
+
+window.addEventListener('scroll', debounceScroll);
+window.addEventListener('resize', debounceScroll); // Adjust for resize events
+
+// Initial trigger to check for animations on page load
+animateOnScroll();
+
+</script>
 
 </body>
 </html>

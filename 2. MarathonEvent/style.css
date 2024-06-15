@@ -1,79 +1,270 @@
-
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
+}
+
+
+.hero {
+    background-image: url('backgrounds.png'); /* Ganti dengan path gambar hero Anda */
+    background-size: cover;
+    background-position: center;
+    height: 400px; /* Sesuaikan tinggi hero sesuai kebutuhan */
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    box-sizing: border-box;
-}
-
-*,
-*::before,
-*::after {
-    box-sizing: inherit;
-}
-
-.container {
-    background-color: #fff;
-    padding: 40px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    max-width: 400px;
-    width: 100%;
-}
-
-h1 {
     text-align: center;
-    margin-bottom: 20px;
-    color: #333;
+    color: white;
+    margin-bottom: 20px; /* Margin bawah untuk memisahkan hero dengan konten utama */
 }
 
-.registrationForm .form-group {
-    margin-bottom: 15px;
+.hero-content {
+    max-width: 600px;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5); /* Transparansi latar belakang konten hero */
 }
 
-.registrationForm label {
-    font-size: 1em;
-    color: #555;
+.hero h1 {
+    font-size: 3em;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.hero h2 {
+    font-size: 2em;
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+
+header.backgroundnya {
+    background-image: url('backgrounds.png'); /* Replace with your image */
+    min-height: 400px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    text-align: center;
+    padding: 80px 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+header, footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+main {
+    padding: 20px;
+}
+
+.couple-image img {
+    width: 100%;
+    max-width: 400px;
     display: block;
+    margin: 0 auto;
+}
+
+.location-map {
+    text-align: center;
+    max-width: '100%';
+    display: block;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+.attendance-form {
+    margin-top: 20px;
+    padding: 20px;
+}
+
+.attendance-form label {
+    display: block;
+    font-weight: 800;
+    margin-top: 5px;
     margin-bottom: 5px;
 }
 
-.registrationForm input[type="text"],
-.registrationForm input[type="email"],
-.registrationForm input[type="tel"] {
-    width: calc(100%); 
-    padding: 10px;
+.attendance-form input[type="text"],
+.attendance-form textarea {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+.attendance-form input[type="radio"] {
+    margin-right: 5px;
+}
+
+.attendance-form input[type="submit"] {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.attendance-form input[type="submit"]:hover {
+    background-color: #555;
+}
+
+.couple-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.location-map h2, .attendance-form h2 {
+    font-size: 1.8em;
+    margin-top: 0;
+    color: #1e1d24;
+}
+
+.location-map p, .attendance-form p {
+    font-size: 1.2em;
+}
+
+form input[type="text"],
+form textarea {
+    width: 100%;
+    padding: 12px 15px;
+    margin-top: 5px;
     border: 1px solid #ddd;
     border-radius: 4px;
     font-size: 1em;
     transition: border-color 0.3s;
 }
 
-.registrationForm input[type="text"]:focus,
-.registrationForm input[type="email"]:focus,
-.registrationForm input[type="tel"]:focus {
-    border-color: #6a5acd;
+form input[type="text"]:focus,
+form textarea:focus {
+    border-color: #1e1d24;
     outline: none;
 }
 
-.registrationForm button {
-    width: 100%;
-    padding: 12px;
-    background-color: #4caf50;
-    color: #fff;
+form input[type="radio"] {
+    margin-top: 10px;
+    margin-right: 5px;
+}
+
+form .radio-group {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+form .radio-group input {
+    margin-right: 5px;
+}
+
+form .radio-group label {
+    margin-right: 20px;
+}
+
+form input[type="submit"] {
+    background-color: #1e1d24;
+    color: white;
+    padding: 12px 20px;
     border: none;
     border-radius: 4px;
     font-size: 1.2em;
     cursor: pointer;
+    margin-top: 20px;
     transition: background-color 0.3s;
 }
 
-.registrationForm button:hover {
-    background-color: #4caf50;
+form input[type="submit"]:hover {
+    background-color: #1e1d24;
+}
+
+iframe {
+    width: 100%;
+    height: 450px;
+    border: 0;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+
+.floating-back-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #1ec06d;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    font-size: 18px;
+    cursor: pointer;
+}
+.floating-back-button:hover {
+    background-color: #0056b3;
+}
+
+#marathon-info {
+    max-width: '100%';
+    margin: 20px auto;
+    background: white;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+#marathon-info h2 {
+    text-align: center;
+    color: #50b3a2;
+    margin-bottom: 10px;
+}
+#marathon-info p {
+    text-align: justify;
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+#marathon-info ul {
+    list-style-type: square;
+    padding-left: 20px;
+}
+#marathon-info li {
+    margin-bottom: 10px;
+}
+#marathon-info ul ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin-top: 5px;
+}
+#marathon-info ul ul li {
+    margin-left: 20px;
+    margin-bottom: 5px;
+}
+.styled-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/* Hover effect */
+.styled-button:hover {
+    background-color: #45a049;
+}
+
+.buttonnya {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+   
+    margin: 0;
 }
